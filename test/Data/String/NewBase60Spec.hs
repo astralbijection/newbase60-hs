@@ -34,6 +34,11 @@ spec :: Spec
 spec = do
   describe "numToSxg" $
     let numToSxgCase (rep, num) =
-          it ("converts " ++ show num ++ " to " ++ rep) $
+          it ("encodes " ++ show num ++ " to " ++ rep) $
             numToSxg num `shouldBe` rep
      in foldl (>>) (pure ()) (map numToSxgCase simpleCases)
+  describe "sxgToNum" $
+    let sxgToNumCase (rep, num) =
+          it ("decodes " ++ rep ++ " to " ++ show num) $
+            sxgToNum rep `shouldBe` num
+     in foldl (>>) (pure ()) (map sxgToNumCase (simpleCases ++ surjectiveCases))
