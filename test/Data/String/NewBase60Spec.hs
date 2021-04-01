@@ -8,11 +8,6 @@ import Data.Functor.Identity (Identity (Identity))
 import Data.String.NewBase60
 import Test.Hspec
 
-numToSxgCase :: ([Char], Integer) -> SpecWith ()
-numToSxgCase (rep, num) =
-  it ("converts " ++ show num ++ " to " ++ rep) $
-    numToSxg num `shouldBe` rep
-
 simpleCases =
   [ ("N", 22),
     ("H", 17),
@@ -38,18 +33,7 @@ surjectiveCases =
 spec :: Spec
 spec = do
   describe "numToSxg" $
-    foldl (>>) (pure ()) (map numToSxgCase simpleCases)
-
---let cases = [(22, "N")]
---    y =
---      foldl
---        (>>)
---        (numToSxg 0 `shouldBe` 0)
---        ( map
---            ( \(expected, actual) ->
---                it ("converts " ++ show expected ++ " to " ++ show actual) $ do
---                  numToSxg expected `shouldBe` actual
---            )
---            cases
---        )
--- in y
+    let numToSxgCase (rep, num) =
+          it ("converts " ++ show num ++ " to " ++ rep) $
+            numToSxg num `shouldBe` rep
+     in foldl (>>) (pure ()) (map numToSxgCase simpleCases)
