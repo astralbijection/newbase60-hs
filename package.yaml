@@ -11,8 +11,7 @@ extra-source-files:
   - ChangeLog.md
 
 # Metadata used when publishing your package
-synopsis: >
-  Provides an implementation for encoding and decoding numbers using Tantek Çelik's New Base 60 number system.
+synopsis: Encodes and decodes numbers using Tantek Çelik's New Base 60 number system.
 category: Data
 
 # To avoid duplicated efforts in documentation and dealing with the
