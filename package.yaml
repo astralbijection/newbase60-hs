@@ -1,7 +1,7 @@
 name: newbase60
 version: 0.1.0.0
 github: "astralbijection/newbase60-hs"
-license: BSD3
+license: MPL-2.0
 author: "Astrid Yu"
 maintainer: "astrid@astrid.tech"
 copyright: "Astrid Yu"
@@ -11,8 +11,9 @@ extra-source-files:
   - ChangeLog.md
 
 # Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
+synopsis: >
+  Provides an implementation for encoding and decoding numbers using Tantek Çelik's New Base 60 number system.
+category: Data
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is

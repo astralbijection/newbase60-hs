@@ -12,16 +12,28 @@ import Data.Maybe (catMaybes, mapMaybe)
 lookupArray :: Array Integer Char
 lookupArray = listArray (0, 59) "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 
+-- | Convert a number into its New Base 60 representation.
+--
+-- For more information, see [this link](http://tantek.pbworks.com/w/page/19402946/NewBase60).
 numToSxg :: Integer -> String
 numToSxg 0 = "0"
 numToSxg n = convert "" n
   where
     convert s 0 = s
     convert s n =
-      let d = n `mod` 60
-          ch = lookupArray ! d
+      let digit = n `mod` 60
+          ch = lookupArray ! digit
        in convert (ch : s) (n `div` 60)
 
+-- | Convert a New Base 60-encoded number into an Integer.
+--
+-- Valid New Base 60 characters are alphanumeric or underscores (that is, they
+-- individually match the regex `[a-zA-Z0-9_]`). Invalid characters will be treated as if
+-- they did not exist. Empty strings will evaluate to 0.
+--
+-- If the resulting value is larger than 2<sup>128</sup>, then this function will return `None`.
+--
+-- For more information, see [this link](http://tantek.pbworks.com/w/page/19402946/NewBase60).
 sxgToNum :: String -> Integer
 sxgToNum chs =
   foldl' (\n digit -> n * 60 + digit) (0 :: Integer) $

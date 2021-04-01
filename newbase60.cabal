@@ -6,13 +6,16 @@ cabal-version: 1.12
 
 name:           newbase60
 version:        0.1.0.0
+synopsis:       Provides an implementation for encoding and decoding numbers using Tantek Çelik's New Base 60 number system.
+
 description:    Please see the README on GitHub at <https://github.com/astralbijection/newbase60-hs#readme>
+category:       Data
 homepage:       https://github.com/astralbijection/newbase60-hs#readme
 bug-reports:    https://github.com/astralbijection/newbase60-hs/issues
 author:         Astrid Yu
 maintainer:     astrid@astrid.tech
 copyright:      Astrid Yu
-license:        BSD3
+license:        MPL-2.0
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
