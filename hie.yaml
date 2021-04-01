@@ -1,0 +1,7 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "newbase60:lib"
+
+    - path: "./test"
+      component: "newbase60:test:newbase60-test"

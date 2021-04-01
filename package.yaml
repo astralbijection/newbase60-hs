@@ -19,8 +19,13 @@ extra-source-files:
 # common to point users to the README.md file.
 description: Please see the README on GitHub at <https://github.com/astralbijection/newbase60-hs#readme>
 
+default-extensions:
+  - LambdaCase
+  - OverloadedStrings
+
 dependencies:
   - base >= 4.7 && < 5
+  - array
 
 library:
   source-dirs: src
@@ -35,3 +40,6 @@ tests:
       - -with-rtsopts=-N
     dependencies:
       - newbase60
+      - hspec
+      - QuickCheck
+      - bytestring
