@@ -37,8 +37,13 @@ spec = do
           it ("encodes " ++ show num ++ " to " ++ rep) $
             numToSxg num `shouldBe` rep
      in foldl (>>) (pure ()) (map numToSxgCase simpleCases)
+
   describe "sxgToNum" $
     let sxgToNumCase (rep, num) =
           it ("decodes " ++ rep ++ " to " ++ show num) $
             sxgToNum rep `shouldBe` num
      in foldl (>>) (pure ()) (map sxgToNumCase (simpleCases ++ surjectiveCases))
+
+  it "performs round-trip conversions" $
+    let roundTripCase num = (sxgToNum . numToSxg) num `shouldBe` num
+     in foldl (>>) (pure ()) (map roundTripCase [0 .. 100000])
