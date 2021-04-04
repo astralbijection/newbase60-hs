@@ -5,7 +5,7 @@ where
 
 import Control.Monad.IO.Class (MonadIO (liftIO))
 import Data.Functor.Identity (Identity (Identity))
-import Data.String.NewBase60
+import Data.String.NewBase60 ( numToSxg, sxgToNum )
 import Test.Hspec
 
 simpleCases =
