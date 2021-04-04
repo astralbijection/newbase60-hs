@@ -24,9 +24,8 @@ default-extensions:
   - OverloadedStrings
 
 dependencies:
-  - base >= 4.7 && < 5
-  - array
-
+  - base >= 4.14.1 && < 4.15
+  - array >= 0.5.4 && < 0.6
 library:
   source-dirs: src
 

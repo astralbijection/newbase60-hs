@@ -36,8 +36,8 @@ library
       LambdaCase
       OverloadedStrings
   build-depends:
-      array
-    , base >=4.7 && <5
+      array >=0.5.4 && <0.6
+    , base >=4.14.1 && <4.15
   default-language: Haskell2010
 
 test-suite newbase60-test
@@ -54,8 +54,8 @@ test-suite newbase60-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
-    , array
-    , base >=4.7 && <5
+    , array >=0.5.4 && <0.6
+    , base >=4.14.1 && <4.15
     , bytestring
     , hspec
     , newbase60
